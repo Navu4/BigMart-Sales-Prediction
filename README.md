@@ -11,6 +11,7 @@ https://bigmart-sales-prediction.herokuapp.com/
 The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and find out the sales of each product at a particular store. Create a model by which Big Mart can analyse and predict the outlet production sales
 
 #### We will handle this problem in a structured way.
+
 1).Problem Statement
 2).Hypothesis Generation
 3).Loading Packages and Data
