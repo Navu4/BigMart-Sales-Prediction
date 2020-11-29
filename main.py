@@ -154,19 +154,19 @@ def Handling_categorical_data(df):
     return df 
 
 #Import library:
-from sklearn.preprocessing import LabelEncoder
+# from sklearn.preprocessing import LabelEncoder
 
-def label_encoding(df):
-    le = LabelEncoder()
-    #New variable for outlet
-    df['Outlet'] = le.fit_transform(df['Outlet_Identifier'])
-    df['Outlet']
-    var_mod = ['Item_Fat_Content','Outlet_Location_Type','Outlet_Size','Item_Type_Combined','Outlet_Type','Outlet']
-    le = LabelEncoder()
-    for i in var_mod:
-        df[i] = le.fit_transform(df[i])
+# def label_encoding(df):
+#     le = LabelEncoder()
+#     #New variable for outlet
+#     df['Outlet'] = le.fit_transform(df['Outlet_Identifier'])
+#     df['Outlet']
+#     var_mod = ['Item_Fat_Content','Outlet_Location_Type','Outlet_Size','Item_Type_Combined','Outlet_Type','Outlet']
+#     le = LabelEncoder()
+#     for i in var_mod
+#         df[i] = le.fit_transform(df[i])
         
-    return df    
+#     return df    
 
 def One_hot_encoding(df):
     #One Hot Coding:
@@ -177,7 +177,7 @@ def One_hot_encoding(df):
 def Encoding(df):
     
     # Label encoding
-    df = label_encoding(df)
+#     df = label_encoding(df)
     
     # #One Hot Coding:
     df = One_hot_encoding(df)
