@@ -9,10 +9,8 @@ from scipy.stats import mode
 
 #Read files:
 train = pd.read_csv("train.csv")
-test = pd.read_csv("test.csv")
-train['source']='train'
-test['source']='test'
-df = pd.concat([train,test],ignore_index=True)
+
+df = train.copy()
 
 # Handling Missing values
 #We found two variables with missing values – Item_Weight and Outlet_Size
@@ -211,20 +209,14 @@ def Data_preprocessing(df):
 #### Handling Categorical Data 
 #### Label and One Hot Encoding
 df = Data_preprocessing(df)
-#Divide into test and train:
-train = df.loc[df['source']=="train"]
-test = df.loc[df['source']=="test"]
 
-#Drop unnecessary columns:
-test.drop(['Item_Outlet_Sales','source'],axis=1,inplace=True)
-train.drop(['source'],axis=1,inplace=True)
 
 #Export files as modified versions:
-train.to_csv("train_modified.csv",index=False)
-test.to_csv("test_modified.csv",index=False)
+df.to_csv("train_modified.csv",index=False)
 
-y = train.Item_Outlet_Sales.values
-X = train.drop('Item_Outlet_Sales',axis = 1)
+
+y = df.Item_Outlet_Sales.values
+X = df.drop('Item_Outlet_Sales',axis = 1)
 
 # Parameter using Hyperparameter Optimisation
 model = xgboost.XGBRegressor(base_score=0.5, booster='gbtree', colsample_bylevel=1,
